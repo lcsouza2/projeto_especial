@@ -1,0 +1,176 @@
+body {
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+
+    background-color: #FF8FAB;
+
+    justify-content: center;
+
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%; 
+}
+
+#main_text {
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    flex-direction: column;
+
+}
+
+#main_text h1 {
+    font-size: 250%;
+    text-align: center;
+}
+
+#main_text p {
+    font-size: 170%;
+}
+
+h1, p {
+    color: #FFE5EC;
+
+}
+
+
+#no_button {
+    position: absolute;
+    width: fit-content;
+
+    transform: translate(-50%, -50%);
+
+    transition: all ease 0s;
+
+    top: 55%;
+    left: 50%;
+    cursor:pointer;
+
+    background-color: #FFB3C6;
+    border-radius: 5px;
+    border-color: #FFFFFF;
+    border-style: solid;
+    border-width: 4px;
+
+    z-index: 5000;
+
+}
+
+#yes_button {
+    position: absolute;
+
+    top: 40%;
+
+    width: 50%;
+    height: 10%;
+
+    font-size: 20px;
+
+
+    background-color: #FFB3C6;
+    border-radius: 5px;
+    border-color: #FFFFFF;
+    border-style: solid;
+    border-width: 4px;
+
+    cursor:pointer;
+}
+
+#popup {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+
+    visibility: hidden;
+
+    top: 0px;
+    left: 0px;
+
+    width: 100%;
+    height: 100%;
+
+    backdrop-filter: blur(20px);
+
+    z-index: 10000000;
+
+}
+
+.popup-content {
+
+    border-radius: 20px;
+    border-color: #FFFFFF;
+    border-width: 5px;
+    border-style: solid;
+
+    visibility: hidden;
+
+    display: flex;
+
+    font-size: 20px;
+
+    justify-content: center;
+    align-items: center;
+
+    color: #FFE5EC;
+
+
+    width: 70%;
+    height: 70%;
+
+    flex-direction: column; 
+}
+
+.popup-content button {
+    margin: 10px;
+
+    cursor: pointer;
+
+    background-color: #FFB3C6;
+
+    border-radius: 5px;
+    border-color: #FFFFFF;
+    border-width: 2px;
+    border-style: solid;
+
+    width: 20%;
+
+}
+
+img {
+   
+    max-width: 25%;
+    max-height: 25%;
+}
+
+#images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 1%;
+
+}
+
+#skeleton_dance {
+    left: 10%;
+}
+
+#triangle_dance {
+    left: 25%
+}
+
+#banana_dance {
+    left: 50%;
+}
+
+#dragon_dance {
+    left: 65%
+}

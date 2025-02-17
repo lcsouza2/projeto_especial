@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  
+  .timeline {
+    display: flex;
+    align-items: center;
+  }
+  
+  .timeline-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .circle {
+    width: 20px;
+    height: 20px;
+    background-color: #3498db;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  
+  .line {
+    width: 50px;
+    height: 2px;
+    background-color: #3498db;
+  }
+  
+  .timeline-item:last-child .line {
+    display: none; /* Remove a linha após a última bolinha */
+  }
