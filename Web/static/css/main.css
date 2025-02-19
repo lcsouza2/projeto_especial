@@ -1,110 +1,94 @@
-@media (max-width: 10000px) { /*768px*/
-  body {
+@media (max-width: 10000px) {
+    /*768px*/
+    body {
+        display: flex;
+        flex-direction: column;
 
-    display: flex;
-    flex-direction: column;
+        align-items: center;
 
-    align-items: center;
+        justify-content: space-between;
 
-    justify-content: space-between;
+        background-color: #e27396;
+        color: white;
 
-    background-color: #e27396;
-    color: white;
-  }
+        padding: 10%;
+    }
 
-  #init_text {
-    position: relative;
-    top: 0%;
+    #init_text {
+        position: relative;
+        top: 0%;
 
-    display: flex;
+        display: flex;
 
-    align-items: center;
-    justify-content: center;
+        align-items: center;
+        justify-content: center;
 
-    flex-direction: column;
+        flex-direction: column;
+    }
 
-  }
+    #init_text #init_title,
+    .init_simple {
+        max-width: 90%;
 
-  #init_text #init_title, .init_simple{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
 
-    max-width: 90%;
+        text-align: center;
+    }
 
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
+    #timeline {
+        position: relative;
 
-    text-align: center;
-  }
+        transition: transform 0.5s;
 
-  #timeline {
-    position: relative;
+        display: flex;
 
-    transition: transform 0.5s;
+        flex-direction: column;
 
-    display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-    flex-direction: column;
+        gap: 15vh;
 
-    align-items: center;
-    justify-content: space-between;
+        width: 1.5%;
+        height: auto;
 
-    width: 1.5%;
-    height: 80vh;
- 
-    top: 40%;
+        top: 40%;
 
-    background-color: #ea9ab2;
-  }
+        margin: 20vh;
 
-  .timemark {
+        background-color: #ea9ab2;
+    }
 
+    .timemark {
+        position: relative;
 
-    cursor: pointer;
+        cursor: pointer;
 
-    height: 3vh;
-    width: 3vh;
+        height: 3vh;
+        width: 3vh;
 
-    background-color: #e27396;
+        background-color: #e27396;
 
-    border-radius: 100%;
+        border-radius: 100%;
 
-    border: 8px, solid, #efcfe3;
+        border: 8px, solid, #efcfe3;
 
-    display: block;
+        align-items: center;
 
-    justify-content: center;
-    align-items: center;
+    }
 
-  }
+    .timemark-content {
+        position: relative;
+        justify-content: center;
+        visibility: hidden;
 
-  .timemark-content {
+        border-radius: 15px;
 
-    position: relative;
+        background-color: aqua;
 
-    border-radius: 15px;
+        overflow: hidden;
 
-    bottom: 0px;
+    }
 
-    background-color: aqua;
-
-    overflow: hidden;
-
-  }
-
-  #end_text {
-
-    margin-top: 0, 10vh;
-
-    text-align: center;
-    max-width: 90%;
-
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-  }
-
-  #end_text img {
-    max-width: 60vw;
-
-    max-height: 60vw;
-  }
 }
-

@@ -22,9 +22,10 @@ class TimeMark {
         this.referedTimeMark.querySelector(".timemark-content").style.visibility = "visible"
 
         this.referedTimeMark.querySelector(".timemark-content").animate([
-            { width: "0vw", height: "0vh" },
-            { width: "75vw", height: "40vh", transform: "translateX(-80vw)" }
+            { width: "0vw", height: "0vh", },
+            { width: "75vw", height: "40vh", transform: "translateX(-80vw)", display: "block" }
         ], {duration: 500, fill: "forwards", easing: "ease" })
+
 
     }
 
@@ -57,3 +58,18 @@ thing.referedTimeMark.addEventListener("click", () => {
     }
 
 })
+
+
+// document.querySelectorAll(".timemark").forEach(mark => {
+//     mark.addEventListener("click", function() {
+//         let content = this.querySelector(".timemark-content");
+
+//         if (content.classList.contains("expanded")) {
+//             content.classList.remove("expanded");
+//             this.classList.remove("expanded");
+//         } else {
+//             content.classList.add("expanded");
+//             this.classList.add("expanded");
+//         }
+//     });
+// });
