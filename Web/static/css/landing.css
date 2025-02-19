@@ -114,18 +114,27 @@ h1, p {
 
     display: flex;
 
-    font-size: 20px;
-
-    justify-content: center;
     align-items: center;
 
-    color: #FFE5EC;
+    justify-content: center;
 
+    color: #FFE5EC; 
 
-    width: 70%;
-    height: 70%;
+    position: absolute;
+
+    width: fit-content;
+    height: fit-content;
+
+    max-width: 80vw;
 
     flex-direction: column; 
+}
+
+.popup-content h1, h2 {
+    text-align: center ;
+    font-size: 180%;
+    margin: 5%;
+
 }
 
 .popup-content button {
@@ -140,7 +149,7 @@ h1, p {
     border-width: 2px;
     border-style: solid;
 
-    width: 20%;
+    width: 70%;
 
 }
 
