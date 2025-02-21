@@ -1,94 +1,192 @@
-@media (max-width: 10000px) {
-    /*768px*/
-    body {
-        display: flex;
-        flex-direction: column;
+@media (max-width: 768px) {
+  body {
+    background-color: #e27396;
+    display: flex;
+    flex-direction: column;
 
-        align-items: center;
+    align-items: center;
 
-        justify-content: space-between;
+    justify-content: space-between;
+  }
 
-        background-color: #e27396;
-        color: white;
+  #init_text {
+    position: relative;
+    top: 0%;
 
-        padding: 10%;
-    }
+    color: #FFFFFF;
 
-    #init_text {
-        position: relative;
-        top: 0%;
+    display: flex;
 
-        display: flex;
+    align-items: center;
+    justify-content: center;
 
-        align-items: center;
-        justify-content: center;
+    flex-direction: column;
+  }
 
-        flex-direction: column;
-    }
+  #init_text #init_title,
+  .init_simple {
+    max-width: 90%;
 
-    #init_text #init_title,
-    .init_simple {
-        max-width: 90%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
 
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-weight: bold;
+    text-align: center;
+  }
 
-        text-align: center;
-    }
+  #timeline {
+    position: relative;
 
-    #timeline {
-        position: relative;
+    transition: transform 0.5s;
 
-        transition: transform 0.5s;
+    display: flex;
 
-        display: flex;
+    flex-direction: column;
 
-        flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 
-        align-items: center;
-        justify-content: space-between;
+    gap: 15vh;
 
-        gap: 15vh;
+    width: 1.5%;
+    height: auto;
 
-        width: 1.5%;
-        height: auto;
+    top: 40%;
 
-        top: 40%;
+    margin: 20vh;
 
-        margin: 20vh;
+    background-color: #ea9ab2;
+  }
 
-        background-color: #ea9ab2;
-    }
+  .timemark {
+    position: relative;
 
-    .timemark {
-        position: relative;
+    cursor: pointer;
 
-        cursor: pointer;
+    height: 3vh;
+    width: 3vh;
 
-        height: 3vh;
-        width: 3vh;
+    background-color: #e27396;
 
-        background-color: #e27396;
+    border-radius: 100%;
 
-        border-radius: 100%;
+    border: 8px, solid, #efcfe3;
 
-        border: 8px, solid, #efcfe3;
+    align-items: center;
+  }
 
-        align-items: center;
+  .timemark-content {
+    position: relative;
+    justify-content: center;
+    visibility: hidden;
 
-    }
+    border-radius: 15px;
 
-    .timemark-content {
-        position: relative;
-        justify-content: center;
-        visibility: hidden;
+    background-color: aqua;
 
-        border-radius: 15px;
+    overflow: hidden;
+  }
+}
 
-        background-color: aqua;
+@media (min-width: 768px) {
+  body {
+    background-color: #e27396;
+    color: #e27396;
 
-        overflow: hidden;
+    display: flex;
+    flex-direction: row;
 
-    }
+    align-items: center;
 
+    overflow: hidden;
+
+    margin-left: 2vw;
+
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #init_text {
+    position: relative;
+    max-width: 25%;
+
+    font-size: 3vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    background-color: #ffe5ec;
+
+    border-radius: 5%;
+    padding: 20px;
+
+    max-height: 80vh;
+  }
+
+  #init_text h1 {
+    font-weight: bold;
+  }
+
+  #timeline {
+    position: relative;
+
+    transition: transform 0.5s;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15vw;
+
+    width: auto;
+    max-height: 1.5vh;
+
+    margin: 20vh;
+
+    background-color: #ea9ab2;
+  }
+
+  .timemark {
+    position: relative;
+
+    cursor: pointer;
+
+    height: 3vh;
+    width: 3vh;
+
+    background-color: #e27396;
+
+    border-radius: 100%;
+
+    border-width: 0.5vw;
+
+    border-color: #efcfe3;
+    border-style: solid;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  .timemark-content {
+    position: relative;
+    justify-content: center;
+    visibility: hidden;
+
+    display: block;
+
+    border-radius: 15px;
+
+    background-color: #efcfe3;
+
+    overflow: hidden;
+  }
 }
