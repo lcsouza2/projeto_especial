@@ -39,7 +39,7 @@ class TimeMark {
 
         this.referedTimeMark.querySelector(".timemark-content").animate([
             { width: "0vw", height: "0vh", },
-            { minWidth: "75vw", height: "40vh", transform: "translate(15vw, 0vh)", display: "block" }
+            { minWidth: "75", height: "40vh", transform: "translate(15vw, 0vh)", display: "block" }
         ], {duration: 500, fill: "forwards", easing: "ease" })
 
     }
@@ -49,7 +49,7 @@ class TimeMark {
 
         this.referedTimeMark.querySelector(".timemark-content").animate([
             { width: "0vw", height: "0vh", },
-            { minWidth: "75vw", height: "40vh", transform: "translate(0vw, -5vh)", display: "block" }
+            { minWidth: "40vw", height: "50vh", transform: "translate(-50%, -45vh)", display: "block" }
         ], {duration: 500, fill: "forwards", easing: "ease" })
 
     }
@@ -59,7 +59,7 @@ class TimeMark {
 
         this.referedTimeMark.querySelector(".timemark-content").animate([
             { width: "0vw", height: "0vh", },
-            { minWidth: "75vw", height: "40vh", transform: "translate(0vw, 5vh)", display: "block" }
+            { minWidth: "40vw", height: "50vh",transform: "translate(-50%, 5vh)", display: "block" }
         ], {duration: 500, fill: "forwards", easing: "ease" })
 
     }
@@ -68,7 +68,7 @@ class TimeMark {
     retract() {
         this.referedTimeMark.querySelector(".timemark-content").animate([
             { width: "", height: "" },
-            { width: "0px", height: "0px" },
+            { width: "0vw", height: "0vh", transform: "translate(-50%, 0%)" },
         ], {duration: 500, fill: "forwards", easing: "ease" })
 
         setTimeout(() => {
@@ -77,14 +77,16 @@ class TimeMark {
     }
 }
 
-function retractAllTimemarkContent() {
-    document.querySelectorAll(".timemark-content").forEach(i => {
-        i.animate([
-            { width: "", height: "" },
-            { width: "0vw", height: "0vh" , transform: "translate(0vw, 0vh)" },
-        ], {duration: 500, fill: "forwards", easing: "ease" })
-        timemarksArray.find(item => item.referedTimeMark == i).state = "retracted"
-    }) 
+const timemarks = document.querySelectorAll(".timemark")
+let timemarksArray = []
+
+function retractAllTimemarkContent(refered) {
+    timemarksArray.forEach(item => {
+        if (refered !== item.referedTimeMark) {
+            item.retract()
+            item.state = "retracted"
+        }
+    })
 
 }
 
@@ -98,15 +100,11 @@ function getPlatform() {
 
 
 if (getPlatform() == "Mobile") {
-
     document.getElementsByClassName(
         "init_simple"
     )[1].textContent = "Da uma olhadinha aí embaixo, tem uma linha do tempo com umas coisinhas bacanudas 👍👍"
 
     let i = 0
-
-    let timemarks = document.querySelectorAll(".timemark")
-    timemarksArray = []
 
     timemarks.forEach(element => {
 
@@ -118,7 +116,7 @@ if (getPlatform() == "Mobile") {
             if (item.state == "retracted") {
 
                 if (timemarksArray.some(el => el.state == "expanded")) {
-                    retractAllTimemarkContent()
+                    retractAllTimemarkContent(item.referedTimeMark)
                 }
 
                 if ( timemarksArray.indexOf(item) % 2 == 0 ) {
@@ -142,20 +140,57 @@ if (getPlatform() == "Mobile") {
         })
     })
 
-
 } else {
     document.addEventListener("wheel", (event) => {
         if (event.deltaY !== 0) {
-          event.preventDefault(); // Impede o scroll vertical padrão
-          window.scrollBy({
+            event.preventDefault(); // Impede o scroll vertical padrão
+            window.scrollBy({
             left: event.deltaY, // Converte o movimento vertical em horizontal
             behavior: "smooth" // Deixa o scroll mais fluido
-          });
+            });
         }
-      }, { passive: false });
+        }, { passive: false });
 
     document.getElementsByClassName(
         "init_simple"
     )[1].textContent = "Da uma olhadinha aí do lado, tem uma linha do tempo com umas coisinhas bacanudas 👍👍"
+
+    let i = 0
+
+    timemarks.forEach(element => {
+
+        let item = new TimeMark(element.id)
+        timemarksArray.push(item)
+
+        item.referedTimeMark.addEventListener("click", () => {
+
+            if (item.state == "retracted") {
+
+                if (timemarksArray.some(el => el.state == "expanded")) {
+                    console.log("abc")
+
+                    retractAllTimemarkContent(item.referedTimeMark)
+                }
+
+                if (timemarksArray.indexOf(item) % 2 == 0 ) {
+                    item.moveTimeLineUp()
+                    setTimeout(item.expandDown(), 500 )
+                    i++
+                    item.state = "expanded"
+                } else {
+                    item.moveTimeLineDown()
+                    item.expandUp()
+                    i++
+                    item.state = "expanded"
+                }
+
+            } else {
+                item.retract()
+                item.resetTimeLInePosition()
+                item.state = "retracted"
+            }
+        })
+    })
 }
+
 
