@@ -74,3 +74,4 @@ botaoNao.addEventListener("click", () => {
 document.getElementById("confirm_no").addEventListener("click", () => alert("Ocorreu um erro, tente novamente... 👀"))
 document.getElementById("return_no").addEventListener("click", () => hidePopUp())
 
+

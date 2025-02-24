@@ -15,3 +15,7 @@ def return_landing(request: Request):
 @app.get("/nosso_caminho")
 def return_main(request: Request):
     return templates.TemplateResponse(request, "main.html")
+
+@app.get("/final")
+def return_end(request: Request):
+    return templates.TemplateResponse(request, "end.html")
