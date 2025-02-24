@@ -1,6 +1,7 @@
 [project]
 name = "projeto-yasmin"
 version = "0.1.0"
+package-mode = false
 description = ""
 authors = [
     {name = "lcsouza",email = "lcsouzagarcia@gmail.com"}
