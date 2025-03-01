@@ -15,7 +15,7 @@ body {
 }
 
 #main_text { 
-    position: relative
+    position: relative;
     display: flex;
     justify-content: center;
 
