@@ -14,8 +14,8 @@ body {
     height: 100%; 
 }
 
-#main_text {
-    positivo: relative 
+#main_text { 
+    position: relative
     display: flex;
     justify-content: center;
 
