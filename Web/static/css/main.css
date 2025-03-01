@@ -124,6 +124,8 @@
 
     height: 0px;
 
+    padding-bottom: 5px;
+
     color: #e27396;
 
     font-weight: bold;
@@ -139,7 +141,7 @@
     max-height: 60vh; /* Evita que vídeos muito altos fiquem enormes */
     object-fit: contain; /* Garante que o vídeo seja totalmente visível sem corte */
     border-radius: 15px;
-}
+  }
 
   .timemark-content img {
     position: relative;
@@ -178,6 +180,7 @@
     display: flex;
     flex-direction: column;
     gap: 5vh;
+    margin-top: 20vh;
   }
 
   #footer-text-1 h2, #footer-text-2 h2{

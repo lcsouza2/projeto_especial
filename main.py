@@ -1,10 +1,20 @@
 from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
 templates = Jinja2Templates("Web/")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Permite qualquer origem
+    allow_credentials=True,
+    allow_methods=["*"],  # Permite qualquer método (GET, POST, etc.)
+    allow_headers=["*"],  # Permite qualquer cabeçalho
+)
+
 
 app.mount("/static", StaticFiles(directory="Web/static/"), "Static Files" )
 

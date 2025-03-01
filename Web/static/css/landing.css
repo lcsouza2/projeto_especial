@@ -21,6 +21,8 @@ body {
     align-items: center;
     flex-direction: column;
 
+    max-width: 90%;
+
 }
 
 #main_text h1 {
